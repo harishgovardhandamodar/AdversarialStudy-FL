@@ -1,0 +1,23 @@
+{
+  "seed": 21,
+  "data": {
+    "num_clients": 6,
+    "points_per_client": 400,
+    "test_points": 800,
+    "target_client_id": 2,
+    "target_private_class": 1
+  },
+  "training": {
+    "rounds": 25,
+    "local_steps": 10,
+    "lr": 0.15,
+    "l2": 0.0005
+  },
+  "attack": {
+    "noise_dim": 4,
+    "attack_steps": 350,
+    "batch_size": 64,
+    "lr_g": 0.03,
+    "lr_d": 0.02
+  }
+}
