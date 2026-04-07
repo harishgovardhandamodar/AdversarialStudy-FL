@@ -59,6 +59,16 @@ Interpretation:
 - Attack increases exposure gap overall, but with variance by seed and tampering intensity.
 - MI AUC drops at high scale, suggesting tampering can make losses noisier and less separable, even while canary exposure remains high.
 
+### 2.3.1 Sweep visualizations
+
+**Exposure gap by run**
+
+![Exposure Gap by Run](results/sweep/exposure_gap_by_run.png)
+
+**Membership inference AUC by run**
+
+![Membership Inference AUC by Run](results/sweep/mi_auc_by_run.png)
+
 ### 2.4 By attack scale (attack-enabled runs only)
 
 - `scale=1.0`: exposure ~**0.0288**, MI AUC ~**0.9922**
@@ -68,6 +78,14 @@ Interpretation:
 - `scale=2.0`: exposure ~**0.1014**, MI AUC ~**0.6953**
 
 This suggests a non-linear regime: moderate-to-high tampering can increase exposure while simultaneously destabilizing membership signals.
+
+**Exposure gap vs attack scale**
+
+![Exposure Gap vs Attack Scale](results/sweep/exposure_vs_attack_scale.png)
+
+**MI AUC vs attack scale**
+
+![MI AUC vs Attack Scale](results/sweep/mi_auc_vs_attack_scale.png)
 
 ### 2.5 Concrete examples from your runs
 
