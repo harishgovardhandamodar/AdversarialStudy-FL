@@ -1,0 +1,31 @@
+{
+  "seed": 202,
+  "data": {
+    "csv_path": "../transaction_data.csv",
+    "max_rows": 100000,
+    "num_clients": 8,
+    "vocab_size": 128
+  },
+  "model": {
+    "hidden_dim": 32
+  },
+  "training": {
+    "rounds": 25,
+    "local_steps": 8,
+    "lr": 0.18,
+    "batch_size": 64
+  },
+  "attack": {
+    "enabled": false,
+    "attacker_client_ids": [3],
+    "target_layers": ["embedding", "output"],
+    "target_token_ids": [125, 126, 120, 121],
+    "scale": 1.6,
+    "noise_std": 0.01
+  },
+  "evaluation": {
+    "target_canary_client": 1,
+    "control_pair": [5, 9],
+    "nonmember_count": 8
+  }
+}

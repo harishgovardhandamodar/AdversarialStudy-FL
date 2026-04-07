@@ -1,0 +1,3 @@
+seed,attack_enabled,target_client,canary_src,canary_dst,control_src,control_dst,canary_loss,control_loss,exposure_gap,target_rank,mi_member_mean_loss,mi_nonmember_mean_loss,mi_auc
+202,False,1,125,126,5,9,4.847972786072416,4.865191446687061,0.0172186606146445,49,4.816060765861665,4.81604904661082,0.5
+202,True,1,125,126,5,9,4.76750685622392,4.863655817373786,0.09614896114986582,24,4.815940214304718,4.815946381865798,0.5
