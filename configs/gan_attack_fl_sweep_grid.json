@@ -1,0 +1,7 @@
+{
+  "grid": {
+    "attack.attack_steps": [0, 150, 350],
+    "attack.lr_g": [0.02, 0.03],
+    "attack.lr_d": [0.015, 0.02]
+  }
+}

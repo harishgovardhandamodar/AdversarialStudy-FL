@@ -1,0 +1,27 @@
+{
+  "seed": 101,
+  "transaction_data": {
+    "csv_path": "transaction_data.csv",
+    "max_rows": 120000
+  },
+  "data": {
+    "num_clients": 8,
+    "test_fraction": 0.2,
+    "public_fraction": 0.12,
+    "target_quantile": 0.75,
+    "min_target_count": 400
+  },
+  "training": {
+    "rounds": 20,
+    "local_steps": 8,
+    "lr": 0.12,
+    "l2": 0.0008
+  },
+  "attack": {
+    "noise_dim": 4,
+    "attack_steps": 220,
+    "batch_size": 64,
+    "lr_g": 0.025,
+    "lr_d": 0.02
+  }
+}

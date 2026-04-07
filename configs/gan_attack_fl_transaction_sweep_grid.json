@@ -1,0 +1,7 @@
+{
+  "grid": {
+    "attack.attack_steps": [0, 120, 220],
+    "attack.lr_g": [0.02, 0.025],
+    "transaction_data.max_rows": [80000, 120000]
+  }
+}
