@@ -47,3 +47,4 @@ python -m scripts.run_sweep --config configs/baseline.json --grid configs/sweep_
 
 - Canary leakage: canary loss, control loss, exposure gap, target rank
 - Membership inference: member/non-member mean loss and Receiver Operating Characteristic Area Under the Curve (ROC-AUC)
+

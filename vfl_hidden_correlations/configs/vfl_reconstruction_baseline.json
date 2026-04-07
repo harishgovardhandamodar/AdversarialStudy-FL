@@ -1,0 +1,21 @@
+{
+  "seed": 7,
+  "data": {
+    "n_train": 3000,
+    "n_test": 800,
+    "n_shadow": 1500,
+    "d_a": 6,
+    "d_b": 4,
+    "latent_dim": 3,
+    "corr_strength": 0.8,
+    "noise_std": 0.15
+  },
+  "model": {
+    "lr": 0.1,
+    "epochs": 600,
+    "l2": 0.0005
+  },
+  "attack": {
+    "ridge": 0.01
+  }
+}
