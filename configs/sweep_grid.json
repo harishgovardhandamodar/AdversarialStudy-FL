@@ -1,0 +1,7 @@
+{
+  "grid": {
+    "attack.enabled": [false, true],
+    "attack.scale": [1.0, 1.25, 1.5, 1.75, 2.0],
+    "attack.noise_std": [0.0, 0.01]
+  }
+}

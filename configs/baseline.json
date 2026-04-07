@@ -1,0 +1,32 @@
+{
+  "seed": 42,
+  "data": {
+    "num_clients": 8,
+    "seq_len": 32,
+    "samples_per_client": 512,
+    "vocab_size": 128,
+    "canary_clients": [1]
+  },
+  "model": {
+    "hidden_dim": 32
+  },
+  "training": {
+    "rounds": 30,
+    "local_steps": 8,
+    "lr": 0.2,
+    "batch_size": 64
+  },
+  "attack": {
+    "enabled": true,
+    "attacker_client_ids": [3],
+    "target_layers": ["embedding", "output"],
+    "target_token_ids": [3, 7, 11, 19],
+    "scale": 1.75,
+    "noise_std": 0.01
+  },
+  "evaluation": {
+    "target_canary_client": 1,
+    "control_pair": [5, 9],
+    "nonmember_count": 8
+  }
+}
