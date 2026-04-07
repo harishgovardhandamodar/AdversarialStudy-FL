@@ -1,4 +1,4 @@
-# Privacy Leakage via Selective Weight Tampering (FL-LM)
+# Privacy Leakage via Selective Weight Tampering (Federated Language Model, FL-LM)
 
 This project gives you a **safe, research-oriented simulation scaffold** for experimenting with:
 
@@ -34,16 +34,16 @@ python -m scripts.run_sweep --config configs/baseline.json --grid configs/sweep_
 - `fl_privacy_tampering/federated.py`: local training + FedAvg loop
 - `fl_privacy_tampering/attacks.py`: selective parameter tampering hooks
 - `fl_privacy_tampering/leakage.py`: privacy leakage metrics
-- `scripts/run_experiment.py`: CLI runner with JSON config
-- `scripts/run_sweep.py`: grid runner + CSV + plots
+- `scripts/run_experiment.py`: command-line interface (CLI) runner with JavaScript Object Notation (JSON) config
+- `scripts/run_sweep.py`: grid runner + comma-separated values (CSV) + plots
 
 ## Notes
 
 - This is intentionally a toy setup for controlled experiments.
 - Use it to compare attack intensity, target layers, and client selection.
-- Extend to real LMs/frameworks once your hypotheses are validated.
+- Extend to real Language Models (LMs)/frameworks once your hypotheses are validated.
 
 ## Metrics included
 
 - Canary leakage: canary loss, control loss, exposure gap, target rank
-- Membership inference: member/non-member mean loss and ROC-AUC
+- Membership inference: member/non-member mean loss and Receiver Operating Characteristic Area Under the Curve (ROC-AUC)

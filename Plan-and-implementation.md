@@ -8,7 +8,7 @@ This document explains how the experiment was built from the initial request thr
 
 **Operational goals derived from the prompt:**
 
-- Build a runnable FL language-model simulation.
+- Build a runnable Federated Learning (FL) language-model simulation.
 - Add selective weight tampering attack controls.
 - Measure privacy leakage using canary-based signals.
 - Extend to multi-run sweeps, CSV logging, plots, and a stronger benchmark (membership inference AUC).
@@ -16,7 +16,7 @@ This document explains how the experiment was built from the initial request thr
 
 ## 2) Planning Phase (Design Decisions)
 
-### 2.1 Why a toy FL-LM first
+### 2.1 Why a toy Federated Language Model (FL-LM) first
 
 - Chosen to validate hypotheses quickly and safely.
 - Keeps iteration speed high while preserving key attack dynamics.
@@ -26,9 +26,9 @@ This document explains how the experiment was built from the initial request thr
 
 - **Data layer:** synthetic per-client token streams + canary pair injection.
 - **Model layer:** tiny next-token model in NumPy (embedding + output projection).
-- **Federated loop:** client-local SGD and server-side FedAvg.
+- **Federated loop:** client-local Stochastic Gradient Descent (SGD) and server-side Federated Averaging (FedAvg).
 - **Attack layer:** selective tampering on chosen layers/token coordinates.
-- **Evaluation layer:** canary exposure metrics and later MI AUC.
+- **Evaluation layer:** canary exposure metrics and later Membership Inference Area Under the Curve (MI AUC).
 
 ### 2.3 Success criteria
 
@@ -49,7 +49,7 @@ This document explains how the experiment was built from the initial request thr
   - Synthetic client streams
   - Canary injection by client ID
 - `fl_privacy_tampering/model.py`
-  - Tiny LM with softmax and local SGD
+  - Tiny Language Model (LM) with softmax and local SGD
 - `fl_privacy_tampering/attacks.py`
   - Selective tampering logic (`target_layers`, `target_token_ids`, `scale`, `noise_std`)
 - `fl_privacy_tampering/federated.py`
@@ -73,7 +73,7 @@ User requested:
 
 - Multi-run sweep (attack/no-attack + parameter grid)
 - CSV logging + plots
-- Membership inference AUC benchmark
+- Membership inference Area Under the Curve (AUC) benchmark
 
 ## T4 - Implementation of expanded capabilities
 
@@ -83,15 +83,15 @@ User requested:
   - Added MI AUC reporting fields
 - Extended `fl_privacy_tampering/leakage.py`
   - Added `MembershipInferenceResult`
-  - Added ROC-AUC computation from sequence-loss scores
+  - Added Receiver Operating Characteristic Area Under the Curve (ROC-AUC) computation from sequence-loss scores
 - Added `scripts/run_sweep.py`
   - Grid expansion from dotted config keys
   - Per-run execution with seed offsets
   - Consolidated `sweep_results.csv`
-  - Auto-generated PNG plots
+  - Auto-generated Portable Network Graphics (PNG) plots
 - Added `configs/sweep_grid.json`
   - Attack toggles and parameter grid
-- Updated docs/deps
+- Updated documentation/dependencies
   - `README.md` usage updates
   - `requirements.txt` includes `matplotlib`
 
@@ -117,23 +117,23 @@ User requested:
 
 ```mermaid
 timeline
-    title FL Privacy Leakage Experiment - Build Timeline
+    title Federated Learning Privacy Leakage Experiment - Build Timeline
     T0 : Prompt received
        : Goal: selective tampering privacy-leakage experiments in Python
     T1 : Project scaffold created
        : package/config/scripts/README/requirements
     T2 : Core modules built
-       : data + model + federated + attacks + leakage + CLI
+       : data + model + federated + attacks + leakage + command-line interface (CLI)
     T3 : Baseline execution validated
        : single config run produced leakage metrics
     T4 : Scope expanded by user
-       : sweep + CSV/plots + MI AUC requested
+       : sweep + comma-separated values (CSV)/plots + MI AUC requested
     T5 : Advanced features implemented
        : reusable runner, grid sweeps, plotting, MI AUC benchmark
     T6 : Full execution completed
        : single-run and 20-run sweep outputs generated
     T7 : Reporting delivered
-       : observations.md for DS/compliance/executives
+       : observations.md for data science (DS)/compliance/executives
 ```
 
 ## 5) Construction Flow (Mermaid)

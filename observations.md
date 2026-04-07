@@ -7,7 +7,7 @@ This document summarizes results from:
 
 ## 1) Executive Snapshot
 
-- Selective tampering increases **canary exposure on average** in this toy FL-LM setup.
+- Selective tampering increases **canary exposure on average** in this toy Federated Language Model setup.
 - Mean exposure gap rose from **0.0691** (no attack) to **0.0834** (attack enabled).
 - At stronger attack settings (`attack.scale` >= 1.75), exposure stays elevated (~0.101), and membership AUC degrades to ~**0.70** at `scale=2.0` (indicating unstable and potentially harmful model behavior).
 - Business implication: manipulated client updates can change memorization behavior and may increase privacy risk, while also reducing model reliability.
@@ -147,7 +147,7 @@ flowchart TD
 
 ## 5) Limitations and Next Steps
 
-- This is a toy LM; absolute values should not be treated as production-scale estimates.
+- This is a toy Language Model; absolute values should not be treated as production-scale estimates.
 - Canary and MI metrics can be sensitive to data generation and seed effects.
 - Recommended next steps:
   - Run larger sweeps with multiple canary clients and repeated seeds per cell.
