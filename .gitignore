@@ -1,2 +1,4 @@
 transaction_data.csv
 *.pyc
+*.rst
+*.doctree
